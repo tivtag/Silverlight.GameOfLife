@@ -50,10 +50,9 @@ namespace GameOfLife
             if( name == null )
                 throw new ArgumentNullException( "name" );
 
-            this.Name       = name;
-
+            this.Name = name;           
             this.storyboard = new Storyboard();
-            this.storyboard.Completed += new EventHandler( OnStoryboardCompleted );
+            this.storyboard.Completed += this.OnStoryboardCompleted;
         }
 
         /// <summary>
