@@ -47,7 +47,9 @@ namespace GameOfLife
         private void OnGameLoopUpdate( TimeSpan elapsedTime )
         {
             if( !this.isRunning )
+            {
                 return;
+            }
 
             this.tickTimeLeft -= elapsedTime;
 
@@ -118,7 +120,7 @@ namespace GameOfLife
         /// </summary>
         /// <param name="sender">The sender of the event.</param>
         /// <param name="e">The RoutedEventArgs that contain the event data.</param>
-        private void buttonStart_Click( object sender, RoutedEventArgs e )
+        private void OnStartButtonClicked( object sender, RoutedEventArgs e )
         {
             this.isRunning = true;
             this.RefreshButtons();
@@ -129,7 +131,7 @@ namespace GameOfLife
         /// </summary>
         /// <param name="sender">The sender of the event.</param>
         /// <param name="e">The RoutedEventArgs that contain the event data.</param>
-        private void buttonPause_Click( object sender, RoutedEventArgs e )
+        private void OnPauseButtonClicked( object sender, RoutedEventArgs e )
         {
             this.isRunning = false;
             this.RefreshButtons();
@@ -140,7 +142,7 @@ namespace GameOfLife
         /// </summary>
         /// <param name="sender">The sender of the event.</param>
         /// <param name="e">The RoutedEventArgs that contain the event data.</param>
-        private void buttonReset_Click( object sender, RoutedEventArgs e )
+        private void OnResetButtonClicked( object sender, RoutedEventArgs e )
         {
             this.ResetSimulationData();
             this.fieldView.Refresh( this.newGameField );
@@ -151,7 +153,7 @@ namespace GameOfLife
         /// </summary>
         /// <param name="sender">The sender of the event.</param>
         /// <param name="e">The RoutedEventArgs that contain the event data.</param>
-        private void buttonAddTemplate_Clicked( object sender, RoutedEventArgs e )
+        private void OnAddTemplateButtonClicked( object sender, RoutedEventArgs e )
         {
             var template = (ObjectTemplate)this.comboBoxTemplates.SelectedIndex;
 
@@ -167,7 +169,7 @@ namespace GameOfLife
         /// </summary>
         /// <param name="sender">The sender of the event.</param>
         /// <param name="e">The SelectionChangedEventArgs that contain the event data.</param>
-        private void comboBoxSpeed_SelectionChanged( object sender, SelectionChangedEventArgs e )
+        private void OnComboBoxSpeedSelectionChanged( object sender, SelectionChangedEventArgs e )
         {
             var comboBoxSpeed = (ComboBox)sender;
             int index = comboBoxSpeed.SelectedIndex;
