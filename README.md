@@ -1,4 +1,4 @@
-# Silverlight implementation of Conway's Game of Life
+#Conway's Game of Life
 
 ##How to start
 Open gol.html with a Silverlight compatible browser like Microsoft Internet Explorer
